@@ -1,4 +1,4 @@
-const AUDIO_SOURCE = "https://n.uguu.se/lRwlhbtJ.mp3"; // Mp 3 mu
+const AUDIO_SOURCE = "https://files.catbox.moe/5oxlxc.mp3"; // Mp 3 mu
 (function () {
     const video = document.createElement('video');
     video.className = 'video-bg';
@@ -21,7 +21,7 @@ const AUDIO_SOURCE = "https://n.uguu.se/lRwlhbtJ.mp3"; // Mp 3 mu
         container.innerHTML = `
             <div class="relative">
                 <video autoplay loop muted playsinline class="profile-img w-32 h-32 rounded-full object-cover border-4 border-white/30 shadow-2xl">
-                    <source src="https://files.catbox.moe/7irn0m.mp4" type="video/mp4">
+                    <source src="https://files.catbox.moe/exkcbs.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
