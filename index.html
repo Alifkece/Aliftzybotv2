@@ -10,30 +10,105 @@
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-		* {
-			font-family: 'Poppins', sans-serif;
-		}
-
-		body {
-			overflow-x: hidden;
-		}
+		* { font-family: 'Poppins', sans-serif; }
+		body { overflow-x: hidden; }
 
 		.video-bg {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: -2;
-			object-fit: cover;
+			position: fixed; top: 0; left: 0;
+			width: 100%; height: 100%;
+			z-index: -2; object-fit: cover;
 		}
 
 		.video-overlay {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
+			position: fixed; top: 0; left: 0;
+			width: 100%; height: 100%;
+			background: rgba(0, 0, 0, 0.4);
+			z-index: -1;
+		}
+
+		.glass-card {
+			background: rgba(255, 255, 255, 0.1);
+			backdrop-filter: blur(20px);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+		}
+
+		.whatsapp-btn {
+			background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+			transform: translateY(0);
+			transition: all 0.3s ease;
+		}
+		.whatsapp-btn:hover {
+			background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+			transform: translateY(-2px);
+			box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+		}
+
+		.profile-img { animation: float 3s ease-in-out infinite; transition: all 0.3s ease; }
+		.profile-img:hover { transform: scale(1.05); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); }
+
+		@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+
+		.scroll-container { height: 100vh; overflow-y: auto; scroll-behavior: smooth; }
+
+		.fade-in { opacity: 0; transform: translateY(30px); animation: fadeInUp 0.8s ease forwards; }
+		@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+		.stagger-1{animation-delay:.1s} .stagger-2{animation-delay:.2s} .stagger-3{animation-delay:.3s}
+		.stagger-4{animation-delay:.4s} .stagger-5{animation-delay:.5s} .stagger-6{animation-delay:.6s}
+		.stagger-7{animation-delay:.7s} .stagger-8{animation-delay:.8s}
+
+		@media (max-width: 768px) {
+			.glass-card { margin: 10px; backdrop-filter: blur(15px); }
+			.profile-img { width: 100px; height: 100px; }
+		}
+	</style>
+</head>
+
+<body class="scroll-container">
+	<div id="video-bg-placeholder"></div>
+	<div class="video-overlay"></div>
+
+	<div class="min-h-screen flex flex-col items-center justify-center p-4 py-20">
+		<div class="w-full max-w-md glass-card rounded-3xl overflow-hidden p-8">
+			<div class="flex flex-col items-center mb-8 fade-in stagger-1">
+				<div class="relative">
+					<div class="profile-container"></div>
+				</div>
+				<h1 class="text-2xl font-bold mt-6 text-white drop-shadow-lg">Aliftzy Offc</h1>
+				<p class="text-white/80 text-center mt-2 font-medium">Is Here</p>
+			</div>
+
+			<div class="space-y-4 mb-8">
+				<a href="https://wa.me/6285545235244?text=halo%20om" class="whatsapp-btn fade-in stagger-2 flex items-center justify-center text-white font-semibold py-4 px-6 rounded-2xl shadow-lg hover:shadow-xl">
+					<i class="fab fa-whatsapp mr-3 text-xl"></i> Owner
+				</a>
+				<a href="https://whatsapp.com/channel/0029VbAK2Yr7dmeRktV9ib3k" class="whatsapp-btn fade-in stagger-3 flex items-center justify-center text-white font-semibold py-4 px-6 rounded-2xl shadow-lg hover:shadow-xl">
+					<i class="fab fa-whatsapp mr-3 text-xl"></i> Channel
+				</a>
+				<a href="https://t.me/Aliftzycrt" class="whatsapp-btn fade-in stagger-4 flex items-center justify-center text-white font-semibold py-4 px-6 rounded-2xl shadow-lg hover:shadow-xl bg-gradient-to-r from-blue-500 to-sky-500">
+					<i class="fab fa-telegram mr-3 text-xl"></i> Telegram
+				</a>
+				<a href="https://youtube.com/@aliftzy23?si=xGMxStsN8qMeCdzW" class="whatsapp-btn fade-in stagger-6 flex items-center justify-center text-white font-semibold py-4 px-6 rounded-2xl shadow-lg hover:shadow-xl bg-gradient-to-r from-red-600 to-red-500">
+					<i class="fab fa-youtube mr-3 text-xl"></i> YouTube
+				</a>
+				<a href="https://www.instagram.com/eks_aipp23?igsh=ZGh5Mmg2Y3htNTM=" class="whatsapp-btn fade-in stagger-7 flex items-center justify-center text-white font-semibold py-4 px-6 rounded-2xl shadow-lg hover:shadow-xl bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500">
+					<i class="fab fa-instagram mr-3 text-xl"></i> Instagram
+				</a>
+				<a href="https://www.tiktok.com/@wannabeyours2317?_t=ZS-8xrCfJsLNXL&_r=1" class="whatsapp-btn fade-in stagger-8 flex items-center justify-center text-white font-semibold py-4 px-6 rounded-2xl shadow-lg hover:shadow-xl bg-gradient-to-r from-black to-gray-800">
+					<i class="fab fa-tiktok mr-3 text-xl"></i> TikTok
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer class="mt-8 text-center fade-in stagger-6">
+		<p class="text-white/80 font-medium drop-shadow-lg">
+			Created By <span class="text-green-400 font-bold">AlifTzy</span>
+		</p>
+	</footer>
+</body>
+</html>
 			background: rgba(0, 0, 0, 0.4);
 			z-index: -1;
 		}
@@ -820,4 +895,5 @@ audio.src = AUDIO_SOURCE;
 </script>
 </body>
 </html>
+
 
